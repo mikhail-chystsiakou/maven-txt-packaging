@@ -1,0 +1,35 @@
+<component-set>
+    <components>
+        <component>
+            <role>org.apache.maven.lifecycle.mapping.LifecycleMapping</role>
+            <role-hint>txt</role-hint>
+            <implementation>
+                org.apache.maven.lifecycle.mapping.DefaultLifecycleMapping
+            </implementation>
+            <configuration>
+                <phases>
+                    <compile>
+                        org.apache.maven.plugins:maven-compiler-plugin:compile
+                    </compile>
+                    <package>
+                        com.zoxal.training.maven:txt-plugin:2.0:txt
+                    </package>
+                    <install>
+                        org.apache.maven.plugins:maven-install-plugin:install
+                    </install>
+                </phases>
+            </configuration>
+        </component>
+
+        <component>
+            <role>org.apache.maven.artifact.handler.ArtifactHandler</role>
+            <role-hint>txt</role-hint>
+            <implementation>
+                org.apache.maven.artifact.handler.DefaultArtifactHandler
+            </implementation>
+            <configuration>
+                <type>txt</type>
+            </configuration>
+        </component>
+    </components>
+</component-set>
